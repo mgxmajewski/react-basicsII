@@ -7,8 +7,8 @@ class Player extends PureComponent {
     static propTypes = {
         changeScore: PropTypes.func,
         removePlayer: PropTypes.func,
-        name: PropTypes.string,
-        score: PropTypes.number,
+        name: PropTypes.string.isRequired,
+        score: PropTypes.number.isRequired,
         id: PropTypes.number,
         index: PropTypes.number,
     }
