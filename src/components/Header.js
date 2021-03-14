@@ -3,8 +3,8 @@ import Stats from "./Stats";
 import Stopwatch from "./Stopwatch";
 
 
-const Header = (props) => {
-    const {title, players} = props;
+
+const Header = ({players, title}) => {
     return (
         <header>
             <Stats players={players}/>
