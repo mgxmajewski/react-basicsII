@@ -31,11 +31,26 @@ class App extends Component {
     ]
   };
 
+  // player id counter
+  prevPlayerId = 4;
+
   handleScoreChange = (index, delta) => {
       this.setState( prevState => ({
           score: prevState.players[index].score += delta
       }));
       console.log(index, delta)
+  }
+
+  handleAddPlayer = (name) => {
+    this.setState({
+      players: [
+        {
+          name: name,
+          score: 0,
+          id: this.prevPlayerId++
+        }
+      ]
+    })
   }
 
   handleRemovePlayer = (id) => {
@@ -67,7 +82,7 @@ class App extends Component {
           />
         )}
 
-        <AddPlayerForm />
+        <AddPlayerForm addPlayer={this.handleAddPlayer}/>
       </div>
     );
   }
