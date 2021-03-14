@@ -22,6 +22,12 @@ class Stopwatch extends Component {
         }
     }
 
+    handleReset = () => {
+        this.setState({
+            elapsedTime: 0
+        })
+    }
+
     handleStopwatch = () => {
         this.setState(prevState => ({
             isRunning: !this.state.isRunning
@@ -43,7 +49,7 @@ class Stopwatch extends Component {
                 <button onClick={this.handleStopwatch}>
                     { this.state.isRunning ? 'Stop': 'Start' }
                 </button>
-                <button>Reset</button>
+                <button onClick={this.handleReset}>Reset</button>
             </div>
         )
     }
