@@ -7,10 +7,12 @@ class AddPlayerForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.addPlayer(this.playerInput.current.value)
+        e.currentTarget.reset()
     }
 
 
     render() {
+        console.log(this.playerInput.value)
         return (
             <form onSubmit={this.handleSubmit}>
                 <input
